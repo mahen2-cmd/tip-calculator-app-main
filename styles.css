@@ -1,0 +1,192 @@
+body {
+    background-color: hsl(185, 41%, 84%);
+    /* replace with your desired color code */
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    /* margin: 50px; */
+    /* text-align: center; */
+}
+
+
+.center-container {
+    text-align: center;
+}
+
+
+
+
+
+
+.container {
+    width: 800px;
+    height: 400px;
+    background-color: hsl(0, 0%, 100%);
+
+    border-radius: 30px;
+
+    align-items: flex-start;
+    margin: auto;
+
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.square {
+    width: 375px;
+    height: 350px;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 20px;
+    /* margin: 20px; */
+}
+
+.text-container {
+    margin: 30px;
+}
+
+.section1 {
+    margin: 40px;
+}
+
+
+ footer {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     padding: 10px;
+     text-align: center;
+ }
+
+
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+
+.button:hover:not(.highlight) {
+    cursor: pointer;
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.button {
+    width: 90px;
+    height: 40px;
+    /* margin: 10px; */
+    margin-bottom: 10px;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+}
+
+input[type="number"] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 10px;
+
+    background-color: hsl(189, 41%, 97%);
+
+/*
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="17"><path fill="#9EBBBD" d="M6.016 16.328v-1.464c1.232-.08 2.22-.444 2.964-1.092.744-.648 1.116-1.508 1.116-2.58v-.144c0-.992-.348-1.772-1.044-2.34-.696-.568-1.708-.932-3.036-1.092V4.184c.56.144 1.012.4 1.356.768.344.368.516.816.516 1.344v.288h1.824v-.432c0-.448-.088-.876-.264-1.284a3.783 3.783 0 00-.744-1.116A4.251 4.251 0 007.54 2.9a5.324 5.324 0 00-1.524-.492V.872H4.288V2.36a5.532 5.532 0 00-1.416.324c-.448.168-.84.392-1.176.672-.336.28-.604.616-.804 1.008-.2.392-.3.844-.3 1.356v.144c0 .96.316 1.708.948 2.244.632.536 1.548.884 2.748 1.044v3.912c-.704-.16-1.248-.472-1.632-.936-.384-.464-.576-1.08-.576-1.848v-.288H.256v.576c0 .464.08.924.24 1.38.16.456.404.88.732 1.272.328.392.744.728 1.248 1.008s1.108.476 1.812.588v1.512h1.728zM4.288 7.424c-.688-.128-1.164-.332-1.428-.612-.264-.28-.396-.644-.396-1.092 0-.464.176-.832.528-1.104.352-.272.784-.448 1.296-.528v3.336zm1.728 5.712V9.344c.768.128 1.328.328 1.68.6.352.272.528.688.528 1.248 0 .544-.196.984-.588 1.32-.392.336-.932.544-1.62.624z" /></svg>'); */
+
+
+
+}
+
+
+
+.highlight {
+
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+
+
+.button-container2 {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.reset-button {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    width: 315px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    border-radius: 5px ;
+    height: 40px;
+    font-size: 18px;
+
+/*
+    position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%); */
+}
+
+
+
+.tip-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    /* background-color: lightblue; */
+}
+
+
+input {
+    direction: rtl;
+}

@@ -21,6 +21,16 @@
 
   <link rel="stylesheet" href="styles.css">
 
+
+
+   <script>
+      // Define a global variable
+      let bill = 0;
+      let number_of_people = 0;
+      let tip = 0;
+    </script>
+
+
 </head>
 <body>
 
@@ -54,7 +64,20 @@
         <!-- <div class="box"> -->
 
 
-          <input type="number" placeholder="$">
+          <input type="number" id="bill" placeholder="$" onchange="handleChangeBill()">
+
+
+
+          <script>
+            function handleChangeBill() {
+              const inputField = document.getElementById('bill');
+              console.log(`Bill value changed to: ${inputField.value}`);
+
+              bill = inputField.value;
+
+              changeCalculations();
+            }
+	        </script>
           <!-- </div> -->
 
           <br>
@@ -66,19 +89,32 @@
           <div class="form-container">
 
             <div class="button-container">
-            <button class="button">5%</button>
-            <button class="button">10%</button>
-            <button class="button">15%</button>
+            <button class="button" onclick="changeTip(0.05)">5%</button>
+            <button class="button" onclick="changeTip(0.10)">10%</button>
+            <button class="button" onclick="changeTip(0.15)">15%</button>
           </div>
 
           <!-- <br> -->
 
           <div class="button-container">
 
-            <button class="button">25%</button>
-            <button class="button">50%</button>
+            <button class="button" onclick="changeTip(0.25)"">25%</button>
+            <button class="button" onclick="changeTip(0.50)"">50%</button>
             <button class="button" style="background-color: hsl(189, 41%, 97%); color:  hsl(183, 100%, 15%)">Custom</button>
           </div>
+
+
+
+          <script>
+            function changeTip(number) {
+              console.log(`Tip changed to ${number}`);
+              tip = number;
+
+              changeCalculations();
+            }
+          </script>
+
+
         </div>
 
 
@@ -104,7 +140,23 @@
 <!-- <br> -->
 <div style="color: hsl(183, 100%, 15%)">Number of People</div>
       <!-- <div class="box"> -->
-        <input type="number" >
+        <!-- <input type="number" > -->
+
+
+
+        <input type="number" id="number_of_people" onchange="handleChangePeople()">
+
+
+        <script>
+          function handleChangePeople() {
+            const inputField = document.getElementById('number_of_people');
+            console.log(`Number of People value changed to: ${inputField.value}`);
+
+            number_of_people = inputField.value;
+
+            changeCalculations();
+          }
+        </script>
         <!-- </div> -->
     <!-- </div> -->
 
@@ -138,7 +190,7 @@
             </div>
 
 
-            <div style="color: hsl(172, 67%, 45%); font-size: 30px;">$4.27</div>
+            <div id="tip-amount" style="color: hsl(172, 67%, 45%); font-size: 30px;">$0.00</div>
           </div>
 
 
@@ -153,12 +205,34 @@
             <div style="color: hsl(185, 41%, 84%); font-size: 10px">/ person</div>
 
             </div>
-            <div style="color: hsl(172, 67%, 45%);font-size: 30px;">$32.79</div>
+            <div id="total" style="color: hsl(172, 67%, 45%);font-size: 30px;">$0.00</div>
           </div>
 
 
         </div>
 
+
+        <script>
+          function changeCalculations() {
+            const tip_amount = document.getElementById('tip-amount');
+            const total = document.getElementById('total');
+            const people = number_of_people
+            let newTip = (bill * tip )/ number_of_people;
+            let newTotal = ( parseInt(bill) + parseInt((bill * tip)) ) / parseInt(number_of_people);
+
+
+            const truncated_tip = newTip.toFixed(2);
+            const truncated_total = newTotal.toFixed(2);
+
+            if( !(bill == 0 || tip == 0 || number_of_people == 0 ) )
+            {
+
+              tip_amount.innerHTML = "$" + truncated_tip.toString();
+              total.innerHTML = "$" + truncated_total.toString();
+            }
+
+          }
+	      </script>
 
         <!--  <br> -->
         <br>

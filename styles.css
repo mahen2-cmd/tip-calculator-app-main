@@ -36,9 +36,6 @@ bill:focus {
     border-color: rgb(0, 255, 98);
 }
 
-/* .bill {
-    margin-right: 0px;
-} */
 
 
 .bill::placeholder {
@@ -70,7 +67,9 @@ bill:focus {
     align-items: flex-start;
     margin: auto;
 
+    /* box-shadow: 10px 10px 10px 10px gray; */
 
+    box-shadow: 0px 0px 30px 0px hsl(184, 14%, 56%);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -262,4 +261,13 @@ input[type="number"] {
 
 input {
     direction: rtl;
+}
+
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    margin-right: 10px;
 }

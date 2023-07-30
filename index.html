@@ -23,6 +23,8 @@
 
 10. The zeros in the bill and number of people are bit to the inside. Fix that!
 
+11. I want the tip value to change instantly when I change the number instead of it calling a function to change it. I am not sure how that is done but it was awesome to see.
+
 
 -->
 
@@ -395,6 +397,9 @@
 
             const custom_button = document.getElementById("custom-tip");
             custom_button.value = "";
+
+
+            document.getElementById("zero").style.display = "none";
 
 
             document.getElementById("reset-button").disabled = true;

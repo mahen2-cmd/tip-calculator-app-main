@@ -1,3 +1,37 @@
+<!-- There are few things to remember and change.
+1. Change the font size of Bill, Select Tip wagera
+2. Change point number 1's color
+3. Add the Custom waaley ka feature
+4. Bill and Number of People kay form colors are not okay - need to fix that
+5. When the form is clicked. There is a green line on it.
+
+6. Reset button
+7. Error when user enters number of people to be 8. Look at Desktop Design empty - the empty desktop design does not match
+
+8. The Dollar sign must stay there when you write.
+9. Take a look at the svg for dollar. What do you do of that?
+
+10. The svg for the person must be added too.
+
+11. The logo svg is to be added too. You didn't use the logo. Instead you wrote it yourself.
+
+12. The custom you wrote for the form. It's color is not correct.
+
+13. The border changes to green when selected and red when there is an error.
+
+14. Style the reset button such that on hover it should change color and also that it is does stuff.
+
+15. Adjust the spacing between the label and the buttons and the form.
+
+
+-->
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +82,7 @@
     <br>
     <br>
     <br>
-    <br>
+    <!-- <br> -->
 
 
     <div class="container">
@@ -56,7 +90,7 @@
 
     <div class="section1">
 
-      <div style="color: hsl(183, 100%, 15%)">Bill</div>
+      <div style="color: hsl(186, 14%, 43%); font-size: 12px;">Bill</div>
 
 
 
@@ -64,9 +98,14 @@
         <!-- <div class="box"> -->
 
 
-          <input type="number" id="bill" placeholder="$" onchange="handleChangeBill()">
+          <!-- <form> -->
 
 
+            <input type="number" style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" id="bill" placeholder="$" onchange="handleChangeBill()">
+
+          <!-- </form> -->
+<!-- font-family: 'Space Mono', monospace;
+    font-weight: 700; -->
 
           <script>
             function handleChangeBill() {
@@ -82,7 +121,7 @@
 
           <br>
           <br>
-          <div style="color: hsl(183, 100%, 15%)">Select Tip %</div>
+          <div style="color: hsl(186, 14%, 43%); font-size: 12px;">Select Tip %</div>
 
 
           <br>
@@ -98,10 +137,40 @@
 
           <div class="button-container">
 
-            <button class="button" onclick="changeTip(0.25)"">25%</button>
-            <button class="button" onclick="changeTip(0.50)"">50%</button>
-            <button class="button" style="background-color: hsl(189, 41%, 97%); color:  hsl(183, 100%, 15%)">Custom</button>
+            <button class="button" onclick="changeTip(0.25)">25%</button>
+            <button class="button" onclick="changeTip(0.50)">50%</button>
+
+
+            <!-- <div class="custom-container"> -->
+
+              <input style="width: 80px; height: 40px; background-color: hsl(189, 41%, 97%); border-radius: 5px; text-align: center; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; font-size: 18px; border: None;" class="custom-button" placeholder="Custom" type="number" id="custom-tip" onchange="changeTipCustom()">
+
+            <!-- </div> -->
+              <!--
+
+            <button class="button" style="background-color: hsl(189, 41%, 97%); color:  hsl(183, 100%, 15%)">Custom</button> -->
+
+
+
+
+
+
           </div>
+
+
+
+
+          <script>
+            function changeTipCustom() {
+              const inputField = document.getElementById('custom-tip');
+              console.log(`Tip value changed to custom value: ${inputField.value}`);
+
+              tip = parseInt(inputField.value) / 100;
+
+              changeCalculations();
+            }
+          </script>
+
 
 
 
@@ -138,13 +207,13 @@
 
 <br>
 <!-- <br> -->
-<div style="color: hsl(183, 100%, 15%)">Number of People</div>
+<div style="color: hsl(186, 14%, 43%); font-size: 12px;">Number of People</div>
       <!-- <div class="box"> -->
         <!-- <input type="number" > -->
 
 
 
-        <input type="number" id="number_of_people" onchange="handleChangePeople()">
+        <input style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" type="number" id="number_of_people" onchange="handleChangePeople()">
 
 
         <script>
@@ -246,29 +315,14 @@
 
       </div>
     </div>
-<!-- Bill
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->
 
   </div>
 
 </div>
+
+
+
 
 
   <footer>
@@ -277,5 +331,10 @@
       Coded by <a href="#">Muhammad Mahen Mughal</a>.
     </div>
   </footer>
+
+
+
+
+
 </body>
 </html>

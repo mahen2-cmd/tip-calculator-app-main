@@ -25,7 +25,26 @@ body {
     text-align: center;
 }
 
+bill:focus {
+    border-color: rgb(0, 255, 98);
+}
 
+/* input[type="text"],
+input[type="email"], */
+/* input[type="number"] { */
+    /* width: 330px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+
+    /* color: hsl(183, 100%, 15%);
+}
+
+form:focus {
+    border-color: hsl(0, 88%, 50%);
+} */
 
 
 
@@ -83,7 +102,7 @@ body {
 
 .button:hover:not(.highlight) {
     cursor: pointer;
-    background-color: hsl(185, 41%, 84%);
+    background-color: hsl(173, 61%, 77%);
     color: hsl(183, 100%, 15%);
 }
 
@@ -115,11 +134,45 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     font-weight: 700;
     font-family: 'Space Mono', monospace;
 }
+
+
+
+.custom-container {
+    width: 80px;
+    height: 30px;
+    background-color: hsl(189, 41%, 97%);
+    margin-top: 3px;
+    border-radius: 5px;
+    text-align: center;
+    color: hsl(183, 100%, 15%);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+.custom-button::placeholder {
+    text-align: center;
+    color: hsl(186, 14%, 43%);
+    display: flex;
+    font-size: 18px
+}
+
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: -3px;
+}
+
+
+
+
 
 input[type="number"] {
     width: 300px;
@@ -172,6 +225,9 @@ input[type="number"] {
         transform: translateX(-50%); */
 }
 
+.reset-button:hover {
+    background-color: hsl(173, 61%, 77%);
+}
 
 
 .tip-container {

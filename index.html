@@ -69,7 +69,16 @@
       let bill = 0;
       let number_of_people = 0;
       let tip = 0;
+
+      // Disable the button on page load
+      window.onload = function() {
+        document.getElementById("reset-button").disabled = true;
+      }
+
+
     </script>
+
+
 
 
 </head>
@@ -101,18 +110,8 @@
 
 
 
-      <!-- <div class="form-container"> -->
-        <!-- <div class="box"> -->
-
-
-          <!-- <form> -->
-
-
             <input type="number" style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" id="bill" class="bill" placeholder="0" onchange="handleChangeBill()">
 
-          <!-- </form> -->
-<!-- font-family: 'Space Mono', monospace;
-    font-weight: 700; -->
 
           <script>
             function handleChangeBill() {
@@ -122,9 +121,9 @@
               bill = inputField.value;
 
               changeCalculations();
+              startResetButton();
             }
 	        </script>
-          <!-- </div> -->
 
           <br>
           <br>
@@ -169,12 +168,23 @@
 
           <script>
             function changeTipCustom() {
+
+              startResetButton();
+              // const buttons = document.querySelectorAll(".button");
+
+              // buttons.forEach((button) => {
+              //     selectedButton.classList.remove("highlight");
+              // });
+
               const inputField = document.getElementById('custom-tip');
-              console.log(`Tip value changed to custom value: ${inputField.value}`);
 
               tip = parseInt(inputField.value) / 100;
 
+              console.log(`Tip value changed to custom value: ${tip}`);
+
+
               changeCalculations();
+              startResetButton();
             }
           </script>
 
@@ -187,6 +197,7 @@
               tip = number;
 
               changeCalculations();
+              startResetButton();
             }
           </script>
 
@@ -215,8 +226,6 @@
 <br>
 <!-- <br> -->
 <div style="color: hsl(186, 14%, 43%); font-size: 12px;">Number of People</div>
-      <!-- <div class="box"> -->
-        <!-- <input type="number" > -->
 
 
 
@@ -231,10 +240,9 @@
             number_of_people = inputField.value;
 
             changeCalculations();
+            startResetButton();
           }
         </script>
-        <!-- </div> -->
-    <!-- </div> -->
 
 
 
@@ -249,7 +257,6 @@
 
 
     <div class="section2">
-      <!-- <br> -->
       <div class="square">
 
         <div class="text-container">
@@ -271,7 +278,6 @@
 
 
           <br>
-          <!-- <br> -->
 
           <div class="tip-container">
 
@@ -310,16 +316,22 @@
           }
 	      </script>
 
-        <!--  <br> -->
         <br>
         <br>
-        <!-- <br> -->
 
         <div class="button-container2" onclick="reset()">
 
-          <button class="reset-button" >RESET</button>
+          <button class="reset-button" id="reset-button">RESET</button>
           </div>
 
+
+
+
+          <script>
+            function startResetButton() {
+              document.getElementById("reset-button").disabled = false;
+            }
+          </script>
 
         <script>
           function reset(){
@@ -341,6 +353,10 @@
 
 
 
+
+
+
+
             const box_bill = document.getElementById('bill');
             const box_number_of_people = document.getElementById('number_of_people');
 
@@ -353,6 +369,13 @@
             buttons.forEach((button) => {
                 selectedButton.classList.remove("highlight");
             });
+
+
+            const custom_button = document.getElementById("custom-tip");
+            custom_button.value = "";
+
+
+            document.getElementById("reset-button").disabled = true;
 
 
           }

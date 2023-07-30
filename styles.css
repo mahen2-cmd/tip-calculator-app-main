@@ -242,6 +242,14 @@ input[type="number"] {
 }
 
 
+.reset-button:disabled {
+    color: hsl(184, 87%, 21%);
+    background-color: hsl(183, 79%, 24%);
+    cursor: default;
+}
+
+
+
 .tip-container {
     display: flex;
     justify-content: space-between;

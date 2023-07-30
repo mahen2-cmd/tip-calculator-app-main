@@ -23,6 +23,13 @@
 
 15. Adjust the spacing between the label and the buttons and the form.
 
+16. Need to get the empty state right. Note, also that the empty state reset button is blank too.
+
+
+17. There is also a dark shadow outside the container. That needs to be replicated too.
+
+
+18. The zeros in the bill and number of people are bit to the inside. Fix that!
 
 -->
 
@@ -101,7 +108,7 @@
           <!-- <form> -->
 
 
-            <input type="number" style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" id="bill" placeholder="$" onchange="handleChangeBill()">
+            <input type="number" style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" id="bill" class="bill" placeholder="0" onchange="handleChangeBill()">
 
           <!-- </form> -->
 <!-- font-family: 'Space Mono', monospace;
@@ -213,7 +220,7 @@
 
 
 
-        <input style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" type="number" id="number_of_people" onchange="handleChangePeople()">
+        <input style="font-size: 18px; color: hsl(183, 100%, 15%); font-family: 'Space Mono', monospace; font-weight: 700; border: None;" type="number" id="number_of_people" placeholder="0" class="number_of_people" onchange="handleChangePeople()">
 
 
         <script>
@@ -308,10 +315,51 @@
         <br>
         <!-- <br> -->
 
-        <div class="button-container2">
+        <div class="button-container2" onclick="reset()">
 
           <button class="reset-button" >RESET</button>
           </div>
+
+
+        <script>
+          function reset(){
+            bill = 0;
+            tip = 0;
+            number_of_people = 0;
+
+
+
+
+            const tip_amount = document.getElementById('tip-amount');
+            const total = document.getElementById('total');
+            let initial_tip = 0;
+            let initial_truncated_tip = initial_tip.toFixed(2);
+            let initial_total = 0;
+            let initial_truncated_total = initial_total.toFixed(2);
+            tip_amount.innerHTML = "$" + initial_truncated_tip.toString();
+            total.innerHTML = "$" + initial_truncated_total.toString();
+
+
+
+            const box_bill = document.getElementById('bill');
+            const box_number_of_people = document.getElementById('number_of_people');
+
+
+            box_bill.value = "";
+            box_number_of_people.value = "";
+
+            const buttons = document.querySelectorAll(".button");
+
+            buttons.forEach((button) => {
+                selectedButton.classList.remove("highlight");
+            });
+
+
+          }
+        </script>
+
+
+
 
       </div>
     </div>

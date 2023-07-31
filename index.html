@@ -1,8 +1,8 @@
 <!-- There are few things to remember and change.
 1. Change point number 1's color
 2. Bill and Number of People kay form colors are not okay - need to fix that
-3. When the form is clicked. There is a green line on it.
 
+3. The border-color for number of people is red when you get 0. We need to display that. That is not there.
 4. The color for error is not matched but otherwise the error looks good.
 
 5. Take a look at the svg for dollar. What do you do of that?
@@ -229,7 +229,7 @@
 
           <div style="color: hsl(186, 14%, 43%); font-size: 12px;">Number of People</div>
 
-          <div id="zero" style="color: #D7938A; font-size: 12px;">Can't be zero</div>
+          <div id="zero" style="color: #ec7d6e; font-size: 12px;">Can't be zero</div>
 
         </div>
         <!-- <br> -->
@@ -251,6 +251,15 @@
             if (number_of_people==0) {
               // Show the division
               document.getElementById("zero").style.display = "block";
+
+
+
+              // var input = document.getElementById("number-of-people");
+              // input.style.borderColor = "red";
+              // input.style.borderWidth = "2px";
+              // input.style.borderStyle = "solid";
+
+
             } else {
               // Hide the division
               document.getElementById("zero").style.display = "none";
